@@ -4,6 +4,7 @@ namespace yiiassets\pdfjs;
 
 /**
  * pdfjs module definition class
+ * @author Sathit Seethaphon <dixonsatit@gmail.com>
  */
 class Module extends \yii\base\Module
 {
