@@ -1,5 +1,5 @@
 {
-    "name": "yiiassets/yii2-pdfjs",
+    "name": "yii2assets/yii2-pdfjs",
     "description": "Yii2 Extension  pdf.js Portable Document Format (PDF) viewer ",
     "type": "yii2-extension",
     "keywords": ["yii2","extension","pdfjs","pdf","PDF Reader"],
@@ -16,7 +16,7 @@
     },
     "autoload": {
         "psr-4": {
-            "dixonsatit\\pdfjs\\": ""
+            "yii2assets\\pdfjs\\": ""
         }
     }
 }

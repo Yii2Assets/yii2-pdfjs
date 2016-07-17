@@ -1,6 +1,6 @@
 <?php
 
-namespace yiiassets\pdfjs;
+namespace yii2assets\pdfjs;
 
 use yii\web\AssetBundle;
 use yii\web\View;
@@ -11,7 +11,7 @@ use yii\web\View;
  */
 class PdfJsAsset extends AssetBundle
 {
-    public $sourcePath = '@yiiassets/pdfjs/assets';
+    public $sourcePath = '@yii2assets/pdfjs/assets';
 
     public $js = [
         'web/compatibility.js',
