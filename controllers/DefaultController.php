@@ -1,6 +1,6 @@
 <?php
 
-namespace yiiassets\pdfjs\controllers;
+namespace yii2assets\pdfjs\controllers;
 
 use yii\web\Controller;
 

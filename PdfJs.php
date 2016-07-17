@@ -1,6 +1,6 @@
 <?php
 
-namespace yiiassets\pdfjs;
+namespace yii2assets\pdfjs;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\helpers\ArrayHelper;
