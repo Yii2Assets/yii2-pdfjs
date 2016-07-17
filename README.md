@@ -1,5 +1,7 @@
 Yii2 PDFJS
 ==========
+[![Latest Stable Version](https://poser.pugx.org/yii2assets/yii2-pdfjs/v/stable)](https://packagist.org/packages/yii2assets/yii2-pdfjs)[![Total Downloads](https://poser.pugx.org/yii2assets/yii2-pdfjs/downloads)](https://packagist.org/packages/yii2assets/yii2-pdfjs)[![Latest Unstable Version](https://poser.pugx.org/yii2assets/yii2-pdfjs/v/unstable)](https://packagist.org/packages/yii2assets/yii2-pdfjs)[![License](https://poser.pugx.org/yii2assets/yii2-pdfjs/license)](https://packagist.org/packages/yii2assets/yii2-pdfjs)[![composer.lock](https://poser.pugx.org/yii2assets/yii2-pdfjs/composerlock)](https://packagist.org/packages/yii2assets/yii2-pdfjs)
+
 Yii2 PDFJS bundle of [PDF.js](https://mozilla.github.io/pdf.js/) plugin. PDF.js Portable Document Format (PDF) viewer
 
 Installation
