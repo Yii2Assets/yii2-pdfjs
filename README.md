@@ -1,6 +1,6 @@
 Yii2 PDFJS
 ==========
-Yii2 Extension  pdf.js Portable Document Format (PDF) viewer
+Yii2 PDFJS bundle of [PDF.js](https://mozilla.github.io/pdf.js/) plugin. PDF.js Portable Document Format (PDF) viewer
 
 Installation
 ------------
