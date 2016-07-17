@@ -28,6 +28,7 @@ Usage
 Once the extension is installed, simply use it in your code by  :
 
 ```php
+use yii\helpers\Url;
 <?= \dixonsatit\pdfjs\PdfJs::widget([
-  'url'=> Url::to('downloads/pdfjs.pdf')
+  'url'=> Url::base().'/downloads/pdfjs.pdf'
 ]); ?>```
