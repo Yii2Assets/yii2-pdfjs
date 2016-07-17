@@ -11,8 +11,7 @@
         }
     ],
     "require": {
-        "yiisoft/yii2": "*",
-        "npm-asset/pdfjs-dist": "*"
+        "yiisoft/yii2": "*"
     },
     "autoload": {
         "psr-4": {
