@@ -1,6 +1,6 @@
 Yii2 PDFJS
 ==========
-[![Latest Stable Version](https://poser.pugx.org/yii2assets/yii2-pdfjs/v/stable)](https://packagist.org/packages/yii2assets/yii2-pdfjs)[![Total Downloads](https://poser.pugx.org/yii2assets/yii2-pdfjs/downloads)](https://packagist.org/packages/yii2assets/yii2-pdfjs)[![Latest Unstable Version](https://poser.pugx.org/yii2assets/yii2-pdfjs/v/unstable)](https://packagist.org/packages/yii2assets/yii2-pdfjs)[![License](https://poser.pugx.org/yii2assets/yii2-pdfjs/license)](https://packagist.org/packages/yii2assets/yii2-pdfjs)[![composer.lock](https://poser.pugx.org/yii2assets/yii2-pdfjs/composerlock)](https://packagist.org/packages/yii2assets/yii2-pdfjs)
+[![Latest Stable Version](https://poser.pugx.org/yii2assets/yii2-pdfjs/v/stable)](https://packagist.org/packages/yii2assets/yii2-pdfjs) [![Total Downloads](https://poser.pugx.org/yii2assets/yii2-pdfjs/downloads)](https://packagist.org/packages/yii2assets/yii2-pdfjs) [![Latest Unstable Version](https://poser.pugx.org/yii2assets/yii2-pdfjs/v/unstable)](https://packagist.org/packages/yii2assets/yii2-pdfjs) [![License](https://poser.pugx.org/yii2assets/yii2-pdfjs/license)](https://packagist.org/packages/yii2assets/yii2-pdfjs) [![composer.lock](https://poser.pugx.org/yii2assets/yii2-pdfjs/composerlock)](https://packagist.org/packages/yii2assets/yii2-pdfjs)
 
 Yii2 PDFJS bundle of [PDF.js](https://mozilla.github.io/pdf.js/) plugin. PDF.js Portable Document Format (PDF) viewer
 
@@ -45,6 +45,7 @@ use yii\helpers\Url;
   'url'=> Url::base().'/downloads/pdfjs.pdf'
 ]); ?>
 ```
+![](docs/images/pdfjs1.png)
 
 use in modal
 
@@ -64,9 +65,23 @@ echo \yii2assets\pdfjs\PdfJs::widget([
 Modal::end();
 
 ```
+![](docs/images/pdfjs2.png)
 
 use in fullscreen
 
 ```
 http://app-url/index.php?r=pdfjs&file=download/pdfjs.pdf
+```
+![](docs/images/pdfjs3.png)
+
+
+Config width & height
+-----
+```php
+use yii\helpers\Url;
+<?= \yii2assets\pdfjs\PdfJs::widget([
+  'width'=>'100%',
+  'heith'=> '500px',
+  'url'=> Url::base().'/downloads/pdfjs.pdf'
+]); ?>
 ```
