@@ -4,7 +4,7 @@
 use yii\helpers\Html;
 use yii\web\View;
 use yii\helpers\Url;
-use yiiassets\pdfjs\PdfJsAsset;
+use yii2assets\pdfjs\PdfJsAsset;
 $bundle = PdfJsAsset::register($this);
 ?>
 <?php $this->beginPage() ?>

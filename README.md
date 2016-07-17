@@ -10,13 +10,13 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-php composer.phar require --prefer-dist yiiassets/yii2-pdfjs "*"
+php composer.phar require --prefer-dist yii2assets/yii2-pdfjs "*"
 ```
 
 or add
 
 ```
-"yiiassets/yii2-pdfjs": "*"
+"yii2assets/yii2-pdfjs": "*"
 ```
 
 to the require section of your `composer.json` file.
@@ -29,6 +29,6 @@ Once the extension is installed, simply use it in your code by  :
 
 ```php
 use yii\helpers\Url;
-<?= \dixonsatit\pdfjs\PdfJs::widget([
+<?= \yii2assets\pdfjs\PdfJs::widget([
   'url'=> Url::base().'/downloads/pdfjs.pdf'
 ]); ?>```

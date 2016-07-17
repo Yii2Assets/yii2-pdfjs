@@ -1,6 +1,6 @@
 <?php
 
-namespace yiiassets\pdfjs;
+namespace yii2assets\pdfjs;
 
 /**
  * pdfjs module definition class
@@ -11,7 +11,7 @@ class Module extends \yii\base\Module
     /**
      * @inheritdoc
      */
-    public $controllerNamespace = 'yiiassets\pdfjs\controllers';
+    public $controllerNamespace = 'yii2assets\pdfjs\controllers';
 
     /**
      * @inheritdoc
