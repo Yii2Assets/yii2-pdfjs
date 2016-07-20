@@ -8,6 +8,8 @@ namespace yii2assets\pdfjs;
  */
 class Module extends \yii\base\Module
 {
+    public $buttons = [];
+
     /**
      * @inheritdoc
      */
@@ -19,6 +21,15 @@ class Module extends \yii\base\Module
     public function init()
     {
         parent::init();
+
+        $this->buttons = array_merge([
+          'presentationMode' => true,
+          'openFile' => true,
+          'print' => true,
+          'download' => true,
+          'viewBookmark' => true,
+          'secondaryToolbarToggle'=> true
+        ], $this->buttons);
 
         // custom initialization code goes here
     }
