@@ -1,39 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-us">
   <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <meta charset="UTF-8">
+    <title>Yii2-pdfjs by Yii2Assets</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
-
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
-    <title>Yii2-pdfjs by Yii2Assets</title>
   </head>
-
   <body>
-    <header>
-      <div class="inner">
-        <h1>Yii2-pdfjs</h1>
-        <h2>Yii2 PDFJS bundle of PDF.js plugin</h2>
-        <a href="https://github.com/Yii2Assets/yii2-pdfjs" class="button"><small>View project on</small> GitHub</a>
-      </div>
-    </header>
+    <section class="page-header">
+      <h1 class="project-name">Yii2-pdfjs</h1>
+      <h2 class="project-tagline">Yii2 PDFJS bundle of PDF.js plugin</h2>
+      <a href="https://github.com/Yii2Assets/yii2-pdfjs" class="btn">View on GitHub</a>
+      <a href="https://github.com/Yii2Assets/yii2-pdfjs/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/Yii2Assets/yii2-pdfjs/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
 
-    <div id="content-wrapper">
-      <div class="inner clearfix">
-        <section id="main-content">
-          <h1>
+    <section class="main-content">
+      <h1>
 <a id="yii2-pdfjs" class="anchor" href="#yii2-pdfjs" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Yii2 PDFJS</h1>
 
 <p><a href="https://packagist.org/packages/yii2assets/yii2-pdfjs"><img src="https://poser.pugx.org/yii2assets/yii2-pdfjs/v/stable" alt="Latest Stable Version"></a> <a href="https://packagist.org/packages/yii2assets/yii2-pdfjs"><img src="https://poser.pugx.org/yii2assets/yii2-pdfjs/downloads" alt="Total Downloads"></a> <a href="https://packagist.org/packages/yii2assets/yii2-pdfjs"><img src="https://poser.pugx.org/yii2assets/yii2-pdfjs/v/unstable" alt="Latest Unstable Version"></a> <a href="https://packagist.org/packages/yii2assets/yii2-pdfjs"><img src="https://poser.pugx.org/yii2assets/yii2-pdfjs/license" alt="License"></a> <a href="https://packagist.org/packages/yii2assets/yii2-pdfjs"><img src="https://poser.pugx.org/yii2assets/yii2-pdfjs/composerlock" alt="composer.lock"></a></p>
 
-<p>Yii2 PDFJS bundle of <a href="https://mozilla.github.io/pdf.js/">PDF.js</a> plugin. PDF.js Portable Document Format (PDF) viewer</p>
+<p>Yii2 PDFJS bundle of <a href="https://mozilla.github.io/pdf.js/">PDF.js</a> plugin. PDF.js Portable Document Format (PDF) viewer.</p>
 
 <h2>
 <a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
@@ -42,7 +33,7 @@
 
 <p>Either run</p>
 
-<pre><code>php composer.phar require --prefer-dist yii2assets/yii2-pdfjs "&gt;=1.0"
+<pre><code>php composer require --prefer-dist yii2assets/yii2-pdfjs "&gt;=1.0"
 </code></pre>
 
 <p>or add</p>
@@ -53,29 +44,40 @@
 <p>to the require section of your <code>composer.json</code> file.</p>
 
 <h2>
-<a id="config" class="anchor" href="#config" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Config</h2>
+<a id="module-setup" class="anchor" href="#module-setup" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Module Setup</h2>
 
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-s"><span class="pl-pds">'</span>modules<span class="pl-pds">'</span></span><span class="pl-k">=&gt;</span>[</span>
+<p>The extension has been created as a module to enable access preview <code>pdf</code> file. you must add the module to your configuration file.</p>
+
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c">//....</span></span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-s"><span class="pl-pds">'</span>modules<span class="pl-pds">'</span></span><span class="pl-k">=&gt;</span>[</span>
 <span class="pl-s1">  <span class="pl-s"><span class="pl-pds">'</span>pdfjs<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> [</span>
 <span class="pl-s1">       <span class="pl-s"><span class="pl-pds">'</span>class<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">'</span>\yii2assets\pdfjs\Module<span class="pl-pds">'</span></span>,</span>
 <span class="pl-s1">   ],</span>
-<span class="pl-s1">],</span></pre></div>
+<span class="pl-s1">],</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-c">//...</span></span></pre></div>
 
 <h2>
 <a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
 
 <p>Once the extension is installed, simply use it in your code by  :</p>
 
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">yii\helpers\Url</span>;</span>
-<span class="pl-s1"><span class="pl-k">&lt;</span>?<span class="pl-k">=</span> <span class="pl-c1">\yii2assets\pdfjs\</span><span class="pl-c1">PdfJs</span><span class="pl-k">::</span>widget([</span>
-<span class="pl-s1">  <span class="pl-s"><span class="pl-pds">'</span>url<span class="pl-pds">'</span></span><span class="pl-k">=&gt;</span> <span class="pl-c1">Url</span><span class="pl-k">::</span>base()<span class="pl-k">.</span><span class="pl-s"><span class="pl-pds">'</span>/downloads/pdfjs.pdf<span class="pl-pds">'</span></span></span>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-pse">&lt;?php</span><span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">yii\helpers\Url</span>;</span>
+<span class="pl-s1"></span><span class="pl-pse"><span class="pl-s1">?</span>&gt;</span>
+
+<span class="pl-pse">&lt;?=</span><span class="pl-s1"> <span class="pl-c1">\yii2assets\pdfjs\</span><span class="pl-c1">PdfJs</span><span class="pl-k">::</span>widget([</span>
+<span class="pl-s1">  <span class="pl-s"><span class="pl-pds">'</span>url<span class="pl-pds">'</span></span><span class="pl-k">=&gt;</span> <span class="pl-c1">Url</span><span class="pl-k">::</span>base()<span class="pl-k">.</span><span class="pl-s"><span class="pl-pds">'</span>/downloads/manualStart_up.pdf<span class="pl-pds">'</span></span></span>
 <span class="pl-s1">]); </span><span class="pl-pse"><span class="pl-s1">?</span>&gt;</span></pre></div>
 
-<p><img src="docs/images/pdfjs1.png" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/Yii2Assets/yii2-pdfjs/master/docs/images/pdfjs1.png" alt=""></p>
 
-<p>use in modal</p>
+<h2>
+<a id="using-a-yii2-pdfjs-widget-inside-a-modal-dialog" class="anchor" href="#using-a-yii2-pdfjs-widget-inside-a-modal-dialog" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Using a <code>yii2-pdfjs</code> widget inside a modal dialog.</h2>
 
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">yii\bootstrap\Modal</span>;</span>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-pse">&lt;?php</span><span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">yii\bootstrap\Modal</span>;</span>
 <span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">yii\helpers\Url</span>;</span>
 <span class="pl-s1"></span>
 <span class="pl-s1"><span class="pl-c1">Modal</span><span class="pl-k">::</span>begin([</span>
@@ -88,44 +90,62 @@
 <span class="pl-s1">]);</span>
 <span class="pl-s1"></span>
 <span class="pl-s1"><span class="pl-c1">Modal</span><span class="pl-k">::</span>end();</span>
-<span class="pl-s1"></span></pre></div>
+<span class="pl-s1"></span><span class="pl-pse"><span class="pl-s1">?</span>&gt;</span></pre></div>
 
-<p><img src="docs/images/pdfjs2.png" alt=""></p>
-
-<p>use in fullscreen</p>
-
-<pre><code>http://app-url/index.php?r=pdfjs&amp;file=download/pdfjs.pdf
-</code></pre>
-
-<p><img src="docs/images/pdfjs3.png" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/Yii2Assets/yii2-pdfjs/master/docs/images/pdfjs2.png" alt=""></p>
 
 <h2>
-<a id="config-width--height" class="anchor" href="#config-width--height" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Config width &amp; height</h2>
+<a id="using-a-yii2-pdfjs-widget-fullscreen-viewer" class="anchor" href="#using-a-yii2-pdfjs-widget-fullscreen-viewer" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Using a <code>yii2-pdfjs</code> widget fullscreen viewer</h2>
 
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">yii\helpers\Url</span>;</span>
-<span class="pl-s1"><span class="pl-k">&lt;</span>?<span class="pl-k">=</span> <span class="pl-c1">\yii2assets\pdfjs\</span><span class="pl-c1">PdfJs</span><span class="pl-k">::</span>widget([</span>
+<pre><code>http://app-url/index.php?r=pdfjs&amp;file=download/manualStart_up.pdf
+</code></pre>
+
+<p><img src="https://raw.githubusercontent.com/Yii2Assets/yii2-pdfjs/master/docs/images/pdfjs3.png" alt=""></p>
+
+<h2>
+<a id="config-width--height" class="anchor" href="#config-width--height" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Config Width &amp; Height</h2>
+
+<div class="highlight highlight-text-html-php"><pre><span class="pl-pse">&lt;?php</span><span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">yii\helpers\Url</span>;</span>
+<span class="pl-s1"></span><span class="pl-pse"><span class="pl-s1">?</span>&gt;</span>
+
+<span class="pl-pse">&lt;?=</span><span class="pl-s1"> <span class="pl-c1">\yii2assets\pdfjs\</span><span class="pl-c1">PdfJs</span><span class="pl-k">::</span>widget([</span>
 <span class="pl-s1">  <span class="pl-s"><span class="pl-pds">'</span>width<span class="pl-pds">'</span></span><span class="pl-k">=&gt;</span><span class="pl-s"><span class="pl-pds">'</span>100%<span class="pl-pds">'</span></span>,</span>
 <span class="pl-s1">  <span class="pl-s"><span class="pl-pds">'</span>heith<span class="pl-pds">'</span></span><span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">'</span>500px<span class="pl-pds">'</span></span>,</span>
 <span class="pl-s1">  <span class="pl-s"><span class="pl-pds">'</span>url<span class="pl-pds">'</span></span><span class="pl-k">=&gt;</span> <span class="pl-c1">Url</span><span class="pl-k">::</span>base()<span class="pl-k">.</span><span class="pl-s"><span class="pl-pds">'</span>/downloads/pdfjs.pdf<span class="pl-pds">'</span></span></span>
-<span class="pl-s1">]); </span><span class="pl-pse"><span class="pl-s1">?</span>&gt;</span></pre></div>
-        </section>
+<span class="pl-s1">]);</span>
+<span class="pl-s1"></span><span class="pl-pse"><span class="pl-s1">?</span>&gt;</span>
+</pre></div>
 
-        <aside id="sidebar">
-          <a href="https://github.com/Yii2Assets/yii2-pdfjs/zipball/master" class="button">
-            <small>Download</small>
-            .zip file
-          </a>
-          <a href="https://github.com/Yii2Assets/yii2-pdfjs/tarball/master" class="button">
-            <small>Download</small>
-            .tar.gz file
-          </a>
+<h2>
+<a id="config-disable-toolbar-buttons" class="anchor" href="#config-disable-toolbar-buttons" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Config disable toolbar buttons</h2>
 
-          <p class="repo-owner"><a href="https://github.com/Yii2Assets/yii2-pdfjs"></a> is maintained by <a href="https://github.com/Yii2Assets">Yii2Assets</a>.</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-pse">&lt;?php</span><span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">yii\helpers\Url</span>;</span>
+<span class="pl-s1"></span><span class="pl-pse"><span class="pl-s1">?</span>&gt;</span>
 
-          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
-        </aside>
-      </div>
-    </div>
+<span class="pl-pse">&lt;?=</span><span class="pl-s1"> <span class="pl-c1">\yii2assets\pdfjs\</span><span class="pl-c1">PdfJs</span><span class="pl-k">::</span>widget([</span>
+<span class="pl-s1">  <span class="pl-s"><span class="pl-pds">'</span>url<span class="pl-pds">'</span></span><span class="pl-k">=&gt;</span> <span class="pl-c1">Url</span><span class="pl-k">::</span>base()<span class="pl-k">.</span><span class="pl-s"><span class="pl-pds">'</span>/downloads/pdfjs.pdf<span class="pl-pds">'</span></span>,</span>
+<span class="pl-s1">  <span class="pl-s"><span class="pl-pds">'</span>buttons<span class="pl-pds">'</span></span><span class="pl-k">=&gt;</span>[</span>
+<span class="pl-s1">    <span class="pl-s"><span class="pl-pds">'</span>presentationMode<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-c1">false</span>,</span>
+<span class="pl-s1">    <span class="pl-s"><span class="pl-pds">'</span>openFile<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-c1">false</span>,</span>
+<span class="pl-s1">    <span class="pl-s"><span class="pl-pds">'</span>print<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-c1">true</span>,</span>
+<span class="pl-s1">    <span class="pl-s"><span class="pl-pds">'</span>download<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-c1">true</span>,</span>
+<span class="pl-s1">    <span class="pl-s"><span class="pl-pds">'</span>viewBookmark<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-c1">false</span>,</span>
+<span class="pl-s1">    <span class="pl-s"><span class="pl-pds">'</span>secondaryToolbarToggle<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-c1">false</span></span>
+<span class="pl-s1">  ]</span>
+<span class="pl-s1">]);</span>
+<span class="pl-s1"></span><span class="pl-pse"><span class="pl-s1">?</span>&gt;</span></pre></div>
+
+<p><img src="https://raw.githubusercontent.com/Yii2Assets/yii2-pdfjs/master/docs/images/pdfjs4.png" alt=""></p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/Yii2Assets/yii2-pdfjs">Yii2-pdfjs</a> is maintained by <a href="https://github.com/Yii2Assets">Yii2Assets</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
 
   
   </body>
