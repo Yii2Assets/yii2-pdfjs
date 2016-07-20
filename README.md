@@ -56,6 +56,7 @@ use yii\helpers\Url;
 ![](docs/images/pdfjs1.png)
 
 Using a `yii2-pdfjs` widget inside a modal dialog.
+----
 
 ```php
 <?php
@@ -77,6 +78,7 @@ Modal::end();
 ![](docs/images/pdfjs2.png)
 
 Using a `yii2-pdfjs` widget fullscreen viewer
+-----
 
 ```
 http://app-url/index.php?r=pdfjs&file=download/manualStart_up.pdf
