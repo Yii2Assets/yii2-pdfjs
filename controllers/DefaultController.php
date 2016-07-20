@@ -2,6 +2,7 @@
 
 namespace yii2assets\pdfjs\controllers;
 
+use Yii;
 use yii\web\Controller;
 
 /**
@@ -17,6 +18,22 @@ class DefaultController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $buttons = Yii::$app->getModule('pdfjs')->buttons;
+        if(Yii::$app->request->getIsPost()){
+          
+          $widgitButtonConfig =  Yii::$app->request->post();
+          if(isset(Yii::$app->request->csrfParam)){
+            unset($widgitButtonConfig[Yii::$app->request->csrfParam]);
+          }
+
+          foreach ($widgitButtonConfig as $key => $value) {
+            $widgitButtonConfig[$key] = $value == '0' ? false : true;
+          }
+          $buttons = array_merge($buttons,$widgitButtonConfig);
+        }
+
+        return $this->render('index',[
+          'buttons'=>$buttons
+        ]);
     }
 }
