@@ -20,14 +20,14 @@ class DefaultController extends Controller
     {
         $buttons = Yii::$app->getModule('pdfjs')->buttons;
         if(Yii::$app->request->getIsPost()){
-          
+
           $widgitButtonConfig =  Yii::$app->request->post();
           if(isset(Yii::$app->request->csrfParam)){
             unset($widgitButtonConfig[Yii::$app->request->csrfParam]);
           }
 
           foreach ($widgitButtonConfig as $key => $value) {
-            $widgitButtonConfig[$key] = $value == '0' ? false : true;
+            $widgitButtonConfig[$key] = trim($value) == '0' ? false:true;
           }
           $buttons = array_merge($buttons,$widgitButtonConfig);
         }

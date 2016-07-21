@@ -6,6 +6,7 @@ foreach ($buttons as $btn => $value) {
     $js .= "$('#{$btn}').hide();\n";
   }
 }
+
 $this->registerJs($js);
  ?>
 

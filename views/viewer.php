@@ -6,6 +6,7 @@ use yii\widgets\ActiveForm;
 $url =  Url::to(['/pdfjs','file'=>Url::to($url)]);
 $this->registerJs('
   $("#pdfjs-form-'.$id.'").submit();
+  $("#pdfjs-'.$id.'").css("background-color","#404040");
 ');
 ?>
 
