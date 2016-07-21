@@ -19,6 +19,7 @@ class DefaultController extends Controller
     public function actionIndex()
     {
         $buttons = Yii::$app->getModule('pdfjs')->buttons;
+        $waterMark = Yii::$app->getModule('pdfjs')->waterMark;
         if(Yii::$app->request->getIsPost()){
 
           $widgitButtonConfig =  Yii::$app->request->post();
@@ -33,7 +34,8 @@ class DefaultController extends Controller
         }
 
         return $this->render('index',[
-          'buttons'=>$buttons
+          'buttons'=>$buttons,
+          'waterMark'=>$waterMark
         ]);
     }
 }

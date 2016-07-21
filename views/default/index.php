@@ -1,12 +1,19 @@
 <?php
+use yii\web\View;
+
 $js = '';
-//var_dump($buttons);
 foreach ($buttons as $btn => $value) {
   if($value === false){
     $js .= "$('#{$btn}').hide();\n";
   }
 }
 
+$pdjsConfig = "
+var WATERMARK_ALPHA = '".$waterMark['alpha']."';
+var WATERMARK_TEXT = '".$waterMark['text']."';
+var WATERMARK_TEXT_COLOR = '".$waterMark['color']."';
+";
+$this->registerJs($pdjsConfig,View::POS_HEAD);
 $this->registerJs($js);
  ?>
 
