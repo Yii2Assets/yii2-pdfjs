@@ -24,7 +24,8 @@
            IGNORE_CURRENT_POSITION_ON_ZOOM: true */
 
 'use strict';
-var WATERMARK_ALPHA = '0.8';
+
+var WATERMARK_ALPHA = '0.3';
 var WATERMARK_TEXT = 'yii2-pdfjs';
 var WATERMARK_TEXT_COLOR = 'green';
 var DEFAULT_URL = 'compressed.tracemonkey-pldi-09.pdf';
@@ -3905,13 +3906,13 @@ var PDFPageView = (function PDFPageViewClosure() {
 
       /*========== Watermark ===========================================*/
       var wmCanvas = document.createElement("canvas");
-            wmCanvas.width=canvas.width;
-            wmCanvas.height=canvas.height;
+            wmCanvas.width = canvas.width;
+            wmCanvas.height = canvas.height;
             wmCanvas.setAttribute("style","position:absolute;border:1px solid black")
-            var wmContext=wmCanvas.getContext('2d');
-            wmContext.globalAlpha=WATERMARK_ALPHA;
+            var wmContext = wmCanvas.getContext('2d');
+            wmContext.globalAlpha = WATERMARK_ALPHA;
             // setup text for filling
-            wmContext.font = "72px Comic Sans MS" ;
+            wmContext.font = "72px Arial" ;
             wmContext.fillStyle = WATERMARK_TEXT_COLOR;
             // get the metrics with font settings
             var metrics = wmContext.measureText(WATERMARK_TEXT);
