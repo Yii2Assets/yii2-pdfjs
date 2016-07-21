@@ -9,6 +9,7 @@ namespace yii2assets\pdfjs;
 class Module extends \yii\base\Module
 {
     public $buttons = [];
+    public $waterMark = false;
 
     /**
      * @inheritdoc
@@ -21,6 +22,19 @@ class Module extends \yii\base\Module
     public function init()
     {
         parent::init();
+
+        $waterMarkDefault = [
+          'text'=>'',
+          'alpha'=>'0.5',
+          'color'=>'red'
+        ];
+
+        if($this->waterMark!==false && is_array($this->waterMark)){
+          $this->waterMark = array_merge($waterMarkDefault,$this->waterMark);
+        }else{
+          $this->waterMark = $waterMarkDefault;
+        }
+
 
         $this->buttons = array_merge([
           'presentationMode' => true,

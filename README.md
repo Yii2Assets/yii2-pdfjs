@@ -39,6 +39,8 @@ The extension has been created as a module to enable access preview `pdf` file. 
 //...
 ```
 
+
+
 Usage
 -----
 
@@ -125,3 +127,24 @@ use yii\helpers\Url;
 ```
 
 ![](docs/images/pdfjs4.png)
+
+Add Watermark text
+------------------
+```php
+//....
+
+'modules'=>[
+  'pdfjs' => [
+       'class' => '\yii2assets\pdfjs\Module',
+       'waterMark'=>[
+         'text'=>' Yii2 PDF.JS',
+         'color'=> 'red',
+         'alpha'=>'0.3'
+       ]
+   ],
+],
+
+//...
+```
+
+![](docs/images/pdfjs5.png)

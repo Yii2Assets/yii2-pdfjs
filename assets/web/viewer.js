@@ -25,6 +25,9 @@
 
 'use strict';
 
+var WATERMARK_ALPHA = '0.3';
+var WATERMARK_TEXT = 'yii2-pdfjs';
+var WATERMARK_TEXT_COLOR = 'green';
 var DEFAULT_URL = 'compressed.tracemonkey-pldi-09.pdf';
 var DEFAULT_SCALE_DELTA = 1.1;
 var MIN_SCALE = 0.25;
@@ -3900,6 +3903,35 @@ var PDFPageView = (function PDFPageViewClosure() {
                                                                  this.viewport);
       }
       this.textLayer = textLayer;
+
+      /*========== Watermark ===========================================*/
+      var wmCanvas = document.createElement("canvas");
+            wmCanvas.width = canvas.width;
+            wmCanvas.height = canvas.height;
+            wmCanvas.setAttribute("style","position:absolute;border:1px solid black")
+            var wmContext = wmCanvas.getContext('2d');
+            wmContext.globalAlpha = WATERMARK_ALPHA;
+            // setup text for filling
+            wmContext.font = "72px Arial" ;
+            wmContext.fillStyle = WATERMARK_TEXT_COLOR;
+            // get the metrics with font settings
+            var metrics = wmContext.measureText(WATERMARK_TEXT);
+            var width = metrics.width;
+            // height is font size
+            var height = 72;
+
+            // change the origin coordinate to the middle of the context
+            wmContext.translate(wmCanvas.width/2, wmCanvas.height/2);
+            // rotate the context (so it's rotated around its center)
+            wmContext.rotate(-Math.atan(wmCanvas.height/wmCanvas.width));
+            // as the origin is now at the center, just need to center the text
+            wmContext.fillText(WATERMARK_TEXT,-width/2,height/2);
+
+            if(div.firstChild)
+                div.insertBefore(wmCanvas, div.firstChild);
+            else
+                div.appendChild(wmCanvas);
+      /*========== End Watermark =======================================*/
 
       var resolveRenderPromise, rejectRenderPromise;
       var promise = new Promise(function (resolve, reject) {
