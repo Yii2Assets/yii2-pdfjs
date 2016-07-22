@@ -26,7 +26,7 @@
 'use strict';
 
 var WATERMARK_ALPHA = '0.3';
-var WATERMARK_TEXT = 'yii2-pdfjs';
+var WATERMARK_TEXT = '';
 var WATERMARK_TEXT_COLOR = 'green';
 var DEFAULT_URL = 'compressed.tracemonkey-pldi-09.pdf';
 var DEFAULT_SCALE_DELTA = 1.1;
@@ -3905,6 +3905,7 @@ var PDFPageView = (function PDFPageViewClosure() {
       this.textLayer = textLayer;
 
       /*========== Watermark ===========================================*/
+      if(WATERMARK_TEXT != ''){
       var wmCanvas = document.createElement("canvas");
             wmCanvas.width = canvas.width;
             wmCanvas.height = canvas.height;
@@ -3931,6 +3932,10 @@ var PDFPageView = (function PDFPageViewClosure() {
                 div.insertBefore(wmCanvas, div.firstChild);
             else
                 div.appendChild(wmCanvas);
+                console.log('watermark On');
+      }else{
+        console.log('watermark Off');
+      }
       /*========== End Watermark =======================================*/
 
       var resolveRenderPromise, rejectRenderPromise;
