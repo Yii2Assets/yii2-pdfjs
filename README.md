@@ -97,7 +97,7 @@ use yii\helpers\Url;
 
 <?= \yii2assets\pdfjs\PdfJs::widget([
   'width'=>'100%',
-  'heith'=> '500px',
+  'height'=> '500px',
   'url'=> Url::base().'/downloads/pdfjs.pdf'
 ]);
 ?>
